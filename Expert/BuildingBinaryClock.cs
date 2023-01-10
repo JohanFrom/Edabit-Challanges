@@ -9,7 +9,7 @@ namespace EdabitChallenges.Expert
     // Building a Binary Clock: https://edabit.com/challenge/DZL7PpHQyPvkYiyDL
     public static class BuildingBinaryClock
     {
-        public static string[] BinaryClock(string time)
+        public static string[] BinaryClock1(string time)
         {
             string strTime = time.Replace(":", "");
             string strBinary = string.Empty;
@@ -41,6 +41,32 @@ namespace EdabitChallenges.Expert
                 $"{charBinary[1]}{charBinary[3]}{charBinary[7]}{charBinary[10]}{charBinary[14]}{charBinary[17]}",
                 $"{charBinary[0]}{charBinary[2]}{charBinary[6]}{charBinary[9]}{charBinary[13]}{charBinary[16]}"
             };
+        }
+
+        public static void BinaryClock2()
+        {
+            var input = "10:37:49";
+            int[] lengths = { 2, 8, 4, 8, 4, 8 };
+            
+            var numbers = input.Replace(":", "");
+            for (int binPos = 8; binPos > 0; binPos /= 2)
+            {
+                var posResult = "";
+                for (int pos = 0; pos < 6; pos++)
+                {
+                    if (lengths[pos] < binPos)
+                    {
+                        posResult += " ";
+                    }
+                    else
+                    {
+                        var iNumber = int.Parse("" + numbers[pos]);
+                        posResult += "" + ((iNumber / binPos) & 1);
+                    }
+
+                    
+                }
+            } 
         }
     }
 }
