@@ -28,11 +28,11 @@ namespace EdabitChallenges.Hard
             {
                 difference = numberOne.Length - 1 + (numberOne.Length - numberTwo.Length);
                 string number2 = num2.ToString($"D{difference}");
-                char[] charNumber2 = number2.ToCharArray();
+                //char[] charNumber2 = number2.ToCharArray();
 
                 for (int i = 0; i < numberOne.Length; i++)
                 {
-                    string numberString = charNumber2[i].ToString();
+                    string numberString = number2[i].ToString();
                     int finishedInt = int.Parse(numberString);
                     strOut += $"{numberOne[i] + finishedInt}";
                 }
@@ -42,11 +42,11 @@ namespace EdabitChallenges.Hard
             {
                 difference = numberTwo.Length - 1 + (numberTwo.Length - numberOne.Length);
                 string number1 = num1.ToString($"D{difference}");
-                char[] charNumber1 = number1.ToCharArray();
+                //char[] charNumber1 = number1.ToCharArray();
 
                 for (int i = 0; i < numberTwo.Length; i++)
                 {
-                    string numberString = charNumber1[i].ToString();
+                    string numberString = number1[i].ToString();
                     int finishedInt = int.Parse(numberString);
                     strOut += $"{numberTwo[i] + finishedInt}";
                 }
