@@ -10,9 +10,6 @@ namespace EdabitChallenges.VeryEasy
 
     public static class ReturnSumOfTwoNumbers
     {
-        public static int Sum(int num1, int num2)
-        {
-            return num1 + num2;
-        }
+        public static int Sum(int num1, int num2) => num1 + num2;
     }
 }
