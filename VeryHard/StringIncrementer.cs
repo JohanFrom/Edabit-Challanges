@@ -23,25 +23,24 @@ namespace EdabitChallenges.VeryHard
 
             if (str.Any(c => str.Any(c => char.IsDigit(c))) == true)
             {
-                char[] chars = str.ToCharArray();
-                for (int i = 0; i < chars.Length; i++)
+                for (int i = 0; i < str.Length; i++)
                 {
-                    if (chars[i].ToString().Any(c => chars[i].ToString().Any(c => char.IsDigit(c))) == true)
+                    if (str[i].ToString().Any(c => str[i].ToString().Any(c => char.IsDigit(c))) == true)
                     {
                         counter++;
-                        strNumbers += chars[i].ToString();
+                        strNumbers += str[i].ToString();
 
                     }
                     else
                     {
-                        strWord += chars[i];
+                        strWord += str[i];
                     }
                 }
 
                 int appender = int.Parse(strNumbers) + 1;
                 strNumbers = appender.ToString().PadLeft(counter, '0');
 
-                if (char.IsDigit(chars[0]) == true)
+                if (char.IsDigit(str[0]) == true)
                 {
                     return $"{strNumbers}{strWord}";
                 }

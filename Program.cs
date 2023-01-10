@@ -1,8 +1,9 @@
-﻿using EdabitChallenges.Easy;
-using EdabitChallenges.Expert;
-using EdabitChallenges.Hard;
+﻿using EdabitChallenges.VeryEasy;
+using EdabitChallenges.Easy;
 using EdabitChallenges.Medium;
-using EdabitChallenges.VeryEasy;
+using EdabitChallenges.Hard;
+using EdabitChallenges.VeryHard;
+using EdabitChallenges.Expert;
 
 namespace EdabitChallenges
 {

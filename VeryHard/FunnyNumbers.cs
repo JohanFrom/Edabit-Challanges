@@ -11,13 +11,12 @@ namespace EdabitChallenges.VeryHard
     {
         public static int? FunnyNumbersCalc(int num, int divider)
         {
-            char[] nums = num.ToString().ToCharArray();
             double newNum = 0;
             double power = divider;
 
-            for (int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < num.ToString().Length; i++)
             {
-                newNum += Math.Pow(double.Parse(nums[i].ToString()), power);
+                newNum += Math.Pow(double.Parse(num.ToString()[i].ToString()), power);
                 power++;
             }
 
