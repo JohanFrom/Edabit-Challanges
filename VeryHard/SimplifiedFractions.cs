@@ -19,11 +19,9 @@ namespace EdabitChallenges.VeryHard
                 intArr[i] /= gcd;
             }
 
-            if (intArr[0] > intArr[1])
-            {
+            if (intArr[0] > intArr[1]) 
                 return intArr[0].ToString();
-            }
-
+                  
             return new string(intArr[0].ToString() + '/' + intArr[1].ToString());
         }
 
