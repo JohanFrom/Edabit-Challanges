@@ -11,11 +11,10 @@ namespace EdabitChallenges.Hard
     {
         public static string ConvertToHEX(string str)
         {
-            byte[] bytes = Encoding.UTF8.GetBytes(str);
-            string hexString = Convert.ToHexString(bytes);
-
+            string hexString = Convert.ToHexString(Encoding.UTF8.GetBytes(str));
             int index = 0;
             StringBuilder sb = new();
+
             foreach (char c in hexString)
             {
                 sb.AppendFormat("{0}{1}", c, (index++ & 1) == 0 ? "" : " ");
