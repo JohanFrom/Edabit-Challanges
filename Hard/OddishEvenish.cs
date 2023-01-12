@@ -13,14 +13,7 @@ namespace EdabitChallenges.Hard
         {
             int total = 0;
             num.ToString().ToCharArray().Select(x => x).ToList().ForEach(x => total += x);
-
-            string returner = (total % 2 == 0) switch
-            {
-                true => "Evenish",
-                false => "Oddish"
-            };
-
-            return returner;
+            return (total % 2 == 0) ? "Evenish" : "Oddish";
         }
     }
 }
