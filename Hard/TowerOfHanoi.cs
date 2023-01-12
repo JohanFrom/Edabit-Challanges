@@ -21,7 +21,7 @@ namespace EdabitChallenges.Hard
             return Count;
         }
 
-        public static void TowerHanoiCalc(int n, char from_rod, char to_rod, char aux_rod)
+        internal static void TowerHanoiCalc(int n, char from_rod, char to_rod, char aux_rod)
         {
             if (n == 1)
             {
