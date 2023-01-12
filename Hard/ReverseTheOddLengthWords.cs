@@ -33,9 +33,7 @@ namespace EdabitChallenges.Hard
 
         private static string ReverseString(string str)
         {
-            char[] array = str.ToCharArray();
-            Array.Reverse(array);
-            return new string(array);
+            return string.Join("", str.ToCharArray().Reverse()); 
         }
     }
 }
