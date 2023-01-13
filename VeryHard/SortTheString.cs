@@ -13,10 +13,10 @@ namespace EdabitChallenges.VeryHard
         public static string Sorting(string str)
         {
             var sortedWords = ToStringArray(str).OrderBy(x => x, StringComparer.InvariantCulture);
-            string strWithoutNum = String.Join("", sortedWords);
+            string sortedStr = String.Join("", sortedWords);
 
             StringBuilder sb = new();
-            foreach (var c in strWithoutNum.ToCharArray())
+            foreach (var c in sortedStr.ToCharArray())
             {
                 if (char.IsDigit(c))
                 {
@@ -24,8 +24,8 @@ namespace EdabitChallenges.VeryHard
                 }
             }
 
-            strWithoutNum = Regex.Replace(strWithoutNum, "[0-9]", "");
-            return strWithoutNum + sb.ToString(); 
+            sortedStr = Regex.Replace(sortedStr, "[0-9]", "");
+            return sortedStr + sb.ToString(); 
         }
 
         //internal static bool ContainsDuplicate(IOrderedEnumerable<string> arr)
