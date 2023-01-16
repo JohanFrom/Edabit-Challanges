@@ -13,7 +13,7 @@ namespace EdabitChallenges.VeryHard
         public static string Sorting(string str)
         {
             var sortedWords = ToStringArray(str).OrderBy(x => x, StringComparer.InvariantCulture);
-            string sortedStr = String.Join("", sortedWords);
+            string sortedStr = string.Join("", sortedWords);
 
             StringBuilder sb = new();
             foreach (var c in sortedStr.ToCharArray())
