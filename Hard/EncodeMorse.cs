@@ -15,19 +15,7 @@ namespace EdabitChallenges.Hard
             StringBuilder sb = new();
             for (int i = 0; i < chars.Length; i++)
             {
-                if (_morseDict.ContainsKey(chars[i]))
-                {
-                    sb.Append(_morseDict[chars[i]]);
-                    sb.Append(' ');
-                }
-                else if (chars[i] == ' ')
-                {
-                    sb.Append("  ");
-                }
-                else
-                {
-                    Console.WriteLine("Value does not exists");
-                }
+                sb.Append(_morseDict.ContainsKey(chars[i]) ? _morseDict[chars[i]] + " " : "  ");
             }
 
             return sb.ToString().TrimStart().TrimEnd();
