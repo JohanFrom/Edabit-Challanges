@@ -34,7 +34,6 @@ namespace EdabitChallenges.VeryHard
             if(password.Where((c, i) => i >= 2 && password[i - 1] == c && password[i - 2] == c).Any())
                 return false;
             
-
             return true;
         }
 
