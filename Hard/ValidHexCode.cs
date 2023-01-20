@@ -12,7 +12,7 @@ namespace EdabitChallenges.Hard
         public static bool IsValidHexCode(string hexCode)
         {
             if (hexCode[0] != '#') return false;
-            if (hexCode.Length != 7) return false;
+            if (hexCode[1..].Length != 6) return false;
 
             for (int i = 1; i < hexCode.Length; i++)
             {
