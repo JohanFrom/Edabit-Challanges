@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: {{REPO_OWNER}}/gh-action--accum-gh-stats@master
+      - uses: {{JohanFrom}}/gh-action--accum-gh-stats@master
         with:
           deps_repo_owner:          {{JohanFrom}}
           deps_repo_branch:         master
