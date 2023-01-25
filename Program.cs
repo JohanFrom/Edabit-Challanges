@@ -61,7 +61,7 @@ namespace EdabitChallenges
             }
             Console.Write("Total completed challenges: ");
             Console.Write(_solutions.Values.Sum(x => x).ToString(), Console.ForegroundColor = ConsoleColor.Green);
-            Console.WriteLine("", Console.ForegroundColor = ConsoleColor.White); 
+            Console.WriteLine(Environment.NewLine, Console.ForegroundColor = ConsoleColor.White); 
 
         }
     }
