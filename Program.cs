@@ -28,15 +28,15 @@ namespace EdabitChallenges
             "bin",
             "obj"
         };
-
+      
         static void Main(string[] args)
         {
             Console.WriteLine("All challenges are ordered in difficulty level.");
             Console.WriteLine("To test the methods, just use the static class name.methodname e.g. TheCollatzConjecture.Collatz()");
             
             CountCompletedChallenges();
-
-            //Console.WriteLine(SearchChallengeSolution("Absolute Sum", null));
+   
+            Console.WriteLine(SearchChallengeSolution(null, null)); // ChallengeName, ChallengeUrl
         }
         
         /// <summary>
@@ -99,13 +99,13 @@ namespace EdabitChallenges
                 string[] files = Directory.GetFiles(dir.ToString(), "*.cs");
                 foreach(var file in files)
                 {
-                    string[] fileContent = File.ReadAllLines(file.ToString());
+                    var fileContent = File.ReadLines(file.ToString()).Take(12);
 
-                    for (int i = 0; i <= 11; i++)
+                    foreach(var line in fileContent)
                     {
                         if(challengeName != null && challengeName != string.Empty)
                         {
-                            if (fileContent[i].Contains(challengeName))
+                            if (line.Contains(challengeName))
                             {
                                 if (!sb.ToString().Contains(file))
                                     sb.AppendLine(file);
@@ -113,7 +113,7 @@ namespace EdabitChallenges
                         }
                         if(challengeUrl != null && challengeUrl != string.Empty)
                         {
-                            if (fileContent[i].Contains(challengeUrl))
+                            if (line.Contains(challengeUrl))
                             {
                                 sb.AppendLine(file);
                                 break;
