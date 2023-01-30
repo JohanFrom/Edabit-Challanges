@@ -20,11 +20,20 @@ namespace EdabitChallenges
             {"Expert", 0}
         };
 
+        private static readonly HashSet<string> _exludedDirs = new()
+        {
+            ".git",
+            ".github",
+            ".vs",
+            "bin",
+            "obj"
+        };
+
         static void Main(string[] args)
         {
             Console.WriteLine("All challenges are ordered in difficulty level.");
             Console.WriteLine("To test the methods, just use the static class name.methodname e.g. TheCollatzConjecture.Collatz()");
-            
+            Console.WriteLine(TestingKSquaredKEqualsN.KToK("4", 2));
             CountCompletedChallenges();
 
             //Console.WriteLine(SearchChallengeSolution("Absolute Sum", null));
@@ -116,14 +125,5 @@ namespace EdabitChallenges
 
             return sb.ToString() == string.Empty ? "Could not find a path to a challenge!" : sb.ToString();
         }
-
-        private static readonly HashSet<string> _exludedDirs = new()
-        {
-            ".git",
-            ".github",
-            ".vs",
-            "bin",
-            "obj"
-        };
     }
 }
