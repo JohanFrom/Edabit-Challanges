@@ -4,10 +4,6 @@ using EdabitChallenges.Medium;
 using EdabitChallenges.Hard;
 using EdabitChallenges.VeryHard;
 using EdabitChallenges.Expert;
-using System.Reflection;
-using System.Xml.XPath;
-using System.Text;
-using System.IO;
 
 namespace EdabitChallenges
 {
@@ -27,7 +23,7 @@ namespace EdabitChallenges
         {
             Console.WriteLine("All challenges are ordered in difficulty level.");
             Console.WriteLine("To test the methods, just use the static class name.methodname e.g. TheCollatzConjecture.Collatz()");
-            
+
             CountCompletedChallenges();
         }
 
