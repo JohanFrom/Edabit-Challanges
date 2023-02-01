@@ -14,7 +14,7 @@ namespace EdabitChallenges
         {
             Console.WriteLine("All challenges are ordered in difficulty level.");
             Console.WriteLine("To test the methods, just use the static class name.methodname e.g. TheCollatzConjecture.Collatz()");
-
+            
             SearchChallengeSolution("Return the", null);
             
             CountCompletedChallenges();
@@ -112,19 +112,20 @@ namespace EdabitChallenges
 
                     foreach (var line in fileContent)
                     {
+                        string fixedStr = string.Join('\\', file.Split('\\')[(file.Split('\\').Length - 2)..]);
                         if (challengeName != null && challengeName != string.Empty)
                         {
                             if (line.ToLower().Contains(challengeName.ToLower()))
                             {
-                                if (!sb.ToString().Contains(file))
-                                    sb.AppendLine(file);
+                                if (!sb.ToString().Contains(fixedStr))
+                                    sb.AppendLine(fixedStr);
                             }
                         }
                         if (challengeUrl != null && challengeUrl != string.Empty)
                         {
                             if (line.ToLower().Contains(challengeUrl.ToLower()))
                             {
-                                sb.AppendLine(file);
+                                sb.AppendLine(fixedStr);
                                 break;
                             }
                         }
