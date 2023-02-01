@@ -14,7 +14,7 @@ namespace EdabitChallenges
         {
             Console.WriteLine("All challenges are ordered in difficulty level.");
             Console.WriteLine("To test the methods, just use the static class name.methodname e.g. TheCollatzConjecture.Collatz()");
-            
+
             SearchChallengeSolution("Return the", null);
             
             CountCompletedChallenges();
