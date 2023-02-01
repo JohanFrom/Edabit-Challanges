@@ -95,10 +95,10 @@ namespace EdabitChallenges
                 Console.WriteLine("Must enter either a challenge name or a challenge url!");
                 return;
             }
-                
 
             StringBuilder sb = new();
             sb.AppendLine("");
+
             string netFolder = new DirectoryInfo(Directory.GetCurrentDirectory()).ToString();
             DirectoryInfo startDirectory = Directory.GetParent(netFolder)!.Parent!.Parent!;
             var dirs = startDirectory.GetDirectories().Where(x => !_exludedDirs.Contains(x.ToString().Split("\\").Last()));
@@ -112,7 +112,8 @@ namespace EdabitChallenges
 
                     foreach (var line in fileContent)
                     {
-                        string fixedStr = string.Join('\\', file.Split('\\')[(file.Split('\\').Length - 2)..]);
+                        string[] splittedPath = file.Split('\\');
+                        string fixedStr = string.Join('\\', splittedPath[(splittedPath.Length - 2)..]);
                         if (challengeName != null && challengeName != string.Empty)
                         {
                             if (line.ToLower().Contains(challengeName.ToLower()))
