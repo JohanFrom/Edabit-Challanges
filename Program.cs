@@ -15,9 +15,8 @@ namespace EdabitChallenges
             Console.WriteLine("All challenges are ordered in difficulty level.");
             Console.WriteLine("To test the methods, just use the static class name.methodname e.g. TheCollatzConjecture.Collatz()");
             
-            SearchChallengeSolution("Return the", null);
-            
             CountCompletedChallenges();
+            SearchChallengeSolution("Return the", null);
         }
 
         #region Counter and Search methods for challenges
@@ -73,7 +72,7 @@ namespace EdabitChallenges
             }
             Console.Write("Total completed challenges: ");
             Console.Write(_solutions.Values.Sum(x => x).ToString(), Console.ForegroundColor = ConsoleColor.Green);
-            Console.WriteLine(Environment.NewLine, Console.ForegroundColor = ConsoleColor.White);
+            Console.WriteLine("", Console.ForegroundColor = ConsoleColor.White);
         }
 
         /// <summary>
