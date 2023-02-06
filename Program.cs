@@ -16,7 +16,7 @@ namespace EdabitChallenges
             Console.WriteLine("To test the methods, just use the static class name.methodname e.g. TheCollatzConjecture.Collatz()");
             
             CountCompletedChallenges();
-            SearchChallengeSolution("Return the", null);
+            SearchChallengeSolution("Return the");
         }
 
         #region Counter and Search methods for challenges
@@ -81,7 +81,7 @@ namespace EdabitChallenges
         /// <param name="challengeName"></param>
         /// <param name="challengeUrl"></param>
         /// <returns>String of file path/s</returns>
-        public static void SearchChallengeSolution(string? challengeName, string? challengeUrl)
+        public static void SearchChallengeSolution(string? challengeName = null, string? challengeUrl = null)
         {
             if (challengeName == null && challengeUrl == null)
             {
