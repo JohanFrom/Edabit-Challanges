@@ -5,6 +5,8 @@ using EdabitChallenges.Hard;
 using EdabitChallenges.VeryHard;
 using EdabitChallenges.Expert;
 using System.Text;
+using System.Linq;
+using System.Diagnostics;
 
 namespace EdabitChallenges
 {
@@ -45,6 +47,7 @@ namespace EdabitChallenges
         /// </summary>
         public static void CountCompletedChallenges()
         {
+            Console.WriteLine("");
             string netFolder = new DirectoryInfo(Directory.GetCurrentDirectory()).ToString();
             string startDirectory = Directory.GetParent(netFolder)!.Parent!.Parent!.FullName;
             FileInfo[] fileInfo;
@@ -96,7 +99,6 @@ namespace EdabitChallenges
             }
 
             StringBuilder sb = new();
-            sb.AppendLine("");
 
             string netFolder = new DirectoryInfo(Directory.GetCurrentDirectory()).ToString();
             DirectoryInfo startDirectory = Directory.GetParent(netFolder)!.Parent!.Parent!;
@@ -132,8 +134,21 @@ namespace EdabitChallenges
                     }
                 }
             }
+            
+            if(sb.ToString() == string.Empty)
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Could not find a path to a challenge!");
+                return;
+            }
+            
+            var splittedResult = sb.ToString().Split("\r\n").ToList();
+            List<string> orderedDifficulty = new(){ "VeryEasy", "Easy", "Medium", "Hard", "VeryHard", "Expert" };
 
-            Console.WriteLine(sb.ToString() == string.Empty ? "Could not find a path to a challenge!" : sb.ToString());
+            foreach (var challenge in splittedResult.OrderBy(x => orderedDifficulty.IndexOf(x.Split("\\")[0])))
+            {
+                Console.WriteLine(challenge);
+            }
         }
 
     #endregion
