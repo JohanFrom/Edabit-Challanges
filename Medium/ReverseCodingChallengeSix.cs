@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdabitChallenges.Hard
+namespace EdabitChallenges.Medium
 {
     // Reverse Coding Challenge #6: https://edabit.com/challenge/NRAbyiQP9ZNa4bDRT
     public static class ReverseCodingChallengeSix
